@@ -16,6 +16,7 @@ public class PalTrackerApplication {
     public TimeEntryRepository timeEntryRepository(@Value("${spring.datasource.url:NOT SET}") String url) {
         MysqlDataSource dataSource = new MysqlDataSource();
         dataSource.setURL(url);
+        System.out.println("url:" + url);
         return new JdbcTimeEntryRepository(dataSource);
     }
 }
